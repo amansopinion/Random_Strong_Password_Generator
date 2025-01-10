@@ -1,0 +1,45 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1e1e2f;
+    color: #fff;
+    text-align: center;
+    padding: 2em;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2em;
+    background-color: #2a2a40;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.password-display {
+    font-size: 1.5em;
+    margin: 1em 0;
+    padding: 0.5em;
+    background: #fff;
+    color: #000;
+    border-radius: 5px;
+    word-break: break-all;
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5em;
+}
+
+.control {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.toggle {
+    position: relative;
+    width: 40px;
+    height: 20px;
+}

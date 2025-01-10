@@ -4,33 +4,34 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Random Pwd Gen</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="cointainer">
+    <div class="container">
       <h1>RANDOM PASSWORD GENERATOR</h1>
       <div class="password-display" id="password">See Your Password Here</div>
       <div class="controls">
         <div class="control">
           <label
-            ><input type="checkbox" id="uppercase" />Include
+            ><input type="checkbox" id="uppercase" /> Include
             <strong>UPPERCASE</strong> letters</label
           >
         </div>
         <div class="control">
           <label
-            ><input type="checkbox" id="lowercase" />Include
+            ><input type="checkbox" id="lowercase" /> Include
             <strong> lowercase </strong> letters</label
           >
         </div>
         <div class="control">
           <label
-            ><input type="checkbox" id="numbers" />Include
+            ><input type="checkbox" id="numbers" /> Include
             <strong> Numbers </strong></label
           >
         </div>
         <div class="control">
           <label
-            ><input type="checkbox" id="symbols" />Include
+            ><input type="checkbox" id="symbols" /> Include
             <strong> Symbols </strong></label
           >
         </div>
@@ -38,13 +39,13 @@
           <label class="toggle">
             <input type="checkbox" id="ambiguous" />
             <span class="toggle"></span>
-          </label>
-          Exclude Ambiguous
+          </label>Exclude <strong> Ambiguous </strong> Symbols
         </div>
       </div>
       <button id="generate">Generate Password</button>
-      <button id="copy">Copy to Clipboard</button>
+      <button id="copy">Copy Password</button>
     </div>
+    <script src="script.js"></script>
   </body>
   <!--Codes By AMAN-->
 </html>
