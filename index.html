@@ -7,43 +7,34 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="container">
+    <div class="password-generator">
       <h1>RANDOM PASSWORD GENERATOR</h1>
-      <div class="password-display" id="password">See Your Password Here</div>
-      <div class="controls">
-        <div class="control">
-          <label
-            ><input type="checkbox" id="uppercase" /> Include
-            <strong>UPPERCASE</strong> letters</label
-          >
-        </div>
-        <div class="control">
-          <label
-            ><input type="checkbox" id="lowercase" /> Include
-            <strong> lowercase </strong> letters</label
-          >
-        </div>
-        <div class="control">
-          <label
-            ><input type="checkbox" id="numbers" /> Include
-            <strong> Numbers </strong></label
-          >
-        </div>
-        <div class="control">
-          <label
-            ><input type="checkbox" id="symbols" /> Include
-            <strong> Symbols </strong></label
-          >
-        </div>
-        <div class="control">
-          <label class="toggle">
-            <input type="checkbox" id="ambiguous" />
-            <span class="toggle"></span>
-          </label>Exclude <strong> Ambiguous </strong> Symbols
-        </div>
+      <div class="output">
+        <input
+          type="text"
+          id="password"
+          readonly
+          placeholder="Generated Password"
+        />
+        <button id="copy-btn">Copy</button>
       </div>
-      <button id="generate">Generate Password</button>
-      <button id="copy">Copy Password</button>
+      <div class="options">
+        <label><input type="checkbox" id="uppercase" />Include Uppercase</label>
+        <label><input type="checkbox" id="lowercase" />Include Lowercase</label>
+        <label><input type="checkbox" id="numbers" />Include Numbers</label>
+        <label><input type="checkbox" id="symbols" />Include Symbols</label>
+        <label
+          ><input type="checkbox" id="ambiguous" />Exclude Ambiguous
+          Symbols</label
+        >
+      </div>
+      <div class="controls">
+        <label
+          >Password Length:
+          <input type="number" id="length" min="4" max="50" value="12"
+        /></label>
+        <button id="generate-btn">Generate Password</button>
+      </div>
     </div>
     <script src="script.js"></script>
   </body>
