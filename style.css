@@ -50,6 +50,11 @@ h1 {
     color: #fff;
     border-radius: 0 5px 5px 0;
     cursor: pointer;
+    
+}
+
+#copy-btn:hover {
+    background: #218838;
 }
 
 .options, .controls {
