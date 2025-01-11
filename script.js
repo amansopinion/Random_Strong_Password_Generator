@@ -13,18 +13,45 @@ const UPPERCASE = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 const LOWERCASE = "abcdefghijklmnopqrstuvwxyz";
 const NUMBERS = "0123456789";
 const SYMBOLS = "!@#$%^&*()_+[]{}<>?/|";
-const AMBIGUOUS = "{}[]()/\\'\",;:.<>";
+const AMBIGUOUS = "{}[]()/\\'\"`~,;:.<>";
 
 function generatePassword() {
-    let length = paseInt(lengthInput.value);
-    let charset = "";
+  let length = parseInt(lengthInput.value);
+  let charset = "";
 
-    if (uppercaseCheckbox.checked) charset += UPPERCASE;
-    if (lowercaseCheckbox.checked) charset += LOWERCASE;
-    if (numbersCheckbox.checked) charset += NUMBERS;
-    if (symbolsCheckbox.checked) charset += SYMBOLS;
+  if (uppercaseCheckbox.checked) charset += UPPERCASE;
+  if (lowercaseCheckbox.checked) charset += LOWERCASE;
+  if (numbersCheckbox.checked) charset += NUMBERS;
+  if (symbolsCheckbox.checked) charset += SYMBOLS;
 
-    if (ambiguousCheckbox.checked) {
-        passwordField.value = "Select at least ONE option";
-    }
+  if (ambiguousCheckbox.checked) {
+    charset = charset
+      .split("")
+      .filter((char) => !AMBIGUOUS.includes(char))
+      .join("");
+  }
+
+  if (!charset) {
+    passwordField.value = "Select at least ONE option";
+    return;
+  }
+
+  let password = "";
+  for (let i = 0; i < length; i++) {
+    password += charset[Math.floor(Math.random() * charset.length)];
+  }
+
+  passwordField.value = password;
 }
+
+generateButton.addEventListener("click", generatePassword);
+
+copyButton.addEventListener("click", () => {
+  if (
+    passwordField.value &&
+    passwordField.value !== "Select at least one option"
+  ) {
+    navigator.clipboard.writeText(passwordField.value);
+    alert("Password copied to clipboard!");
+  }
+});
